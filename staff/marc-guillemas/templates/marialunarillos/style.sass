@@ -1,0 +1,709 @@
+$break-small: 320px
+$break-medium: 768px
+$break-large: 1200px
+
+@media screen and (min-width: $break-small) 
+
+*
+    margin: 0
+    box-sizing: border-box
+.navbar 
+    display: block
+    z-index: 1
+    height: 4rem
+    width: 100%
+    position: fixed
+    top: 0
+    left: 0
+    // margin: 0
+    padding: 0
+    // justify-content: space-around
+    background-color:  #e4e4e4
+    &__list
+        display: flex
+        // justify-content: space-between
+        // margin-top: .5rem
+        align-items: center
+        height: 100%
+        list-style: none
+        padding: 0
+    &__element
+        display: flex
+        justify-content: center
+        align-items: center
+        // border: .2rem solid red
+        height: 100%
+        width: 4rem
+        &--pay
+            background-color: #ff7066
+            font-size: 1.5rem
+    
+        &--search
+            margin-left: 3.5rem
+            background-color: #d9d9d9
+        &--burguer
+           display: flex
+           flex-direction: column
+            //    border: 1px solid black
+           height: 100%
+           width: 3rem
+           justify-content: center
+           align-items: center
+        &--user 
+            margin-left: 1rem
+    &__ham
+        display: flex
+        background-color: black
+        width: 1.5rem
+        height: .20rem
+        margin: .12rem
+        background-color:  #ff7066
+
+.intro 
+    display: flex
+    flex-direction: column
+    margin-bottom: 4rem
+    &__name
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 5rem
+        margin-top: 4rem
+        
+    &__images
+        height: 12rem
+        background-color: #d9d9d98a
+    &__img
+        height: 12rem
+        width: 100%
+
+.utensils
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    &__img
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 2rem
+    &__title
+        width: 15rem
+        margin: 2rem 4rem
+        padding: .3rem
+        display: flex
+        justify-content: center
+        align-items: center
+        border-top: .13rem solid black
+        border-bottom: .13rem solid black
+
+    &__grid
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        grid-template-rows: repeat(9,1fr)
+        width: 100%
+        // height: 100px
+    &__items
+        height: 10rem
+        // border: 1px solid black
+        // background-color: red
+        margin: .4rem 0
+        padding: 0
+            
+        &--one 
+            grid-column: 1 / span 3
+            background-color: #eeeeeea1
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--two
+            grid-column: 1 / span 3
+            background-color: #cccccc70 
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem  
+        &--three
+            grid-column: 1 / span 3
+            background-color: #eeeeeea1
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--four
+            grid-column: 1 / span 3
+            background-color: #cccccc70 
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--five
+            grid-column: 1 / span 3
+            background-color: #eeeeeea1
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--six
+            grid-column: 1 / span 3
+            background-color: #cccccc70 
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--seven
+            grid-column: 1 / span 3
+            background-color: #eeeeeea1
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--eight
+            grid-column: 1 / span 3
+            background-color: #cccccc70 
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--nine
+            grid-column: 1 / span 3
+            background-color: #eeeeeea1
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+
+.ingredients
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    &__img
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 2rem
+    &__title
+        width: 15rem
+        margin: 2rem 4rem
+        padding: .3rem
+        display: flex
+        justify-content: center
+        align-items: center
+        border-top: .13rem solid black
+        border-bottom: .13rem solid black
+    &__grid
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        grid-template-rows: repeat(6,1fr)
+        width: 100%
+        // height: 100px
+    &__items
+        height: 10rem
+        // border: 1px solid black
+        margin: .4rem 0
+        padding: 0
+            
+        &--one 
+            grid-column: 1 / span 3
+            background-color: #eeeeeea1
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--two
+            grid-column: 1 / span 3
+            background-color: #cccccc70 
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem  
+        &--three
+            grid-column: 1 / span 3
+            background-color: #eeeeeea1
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--four
+            grid-column: 1 / span 3
+            background-color: #cccccc70 
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--five
+            grid-column: 1 / span 3
+            background-color: #eeeeeea1
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--six
+            grid-column: 1 / span 3
+            background-color: #cccccc70 
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+
+.party
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    &__img
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 2rem
+    &__title
+        width: 15rem
+        margin: 2rem 4rem
+        padding: .3rem
+        display: flex
+        justify-content: center
+        align-items: center
+        border-top: .13rem solid black
+        border-bottom: .13rem solid black
+    &__grid
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        grid-template-rows: repeat(3,1fr)
+        width: 100%
+        // height: 100px
+    &__items
+        height: 10rem
+        // border: 1px solid black
+        // background-color: red
+        margin: .4rem 0
+        padding: 0
+            
+        &--one 
+            grid-column: 1 / span 3
+            background-color: #eeeeeea1
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--two
+            grid-column: 1 / span 3
+            background-color: #cccccc70 
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem  
+        &--three
+            grid-column: 1 / span 3
+            background-color: #eeeeeea1
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+
+.blog
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    &__img
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 2rem
+    &__title
+        width: 15rem
+        margin: 2rem 4rem
+        padding: .3rem
+        display: flex
+        justify-content: center
+        align-items: center
+        border-top: .13rem solid black
+        border-bottom: .13rem solid black
+    &__inputs
+        display: flex
+        justify-content: center
+        margin: 1rem 1.7rem
+        height: 2.5rem
+        align-items: center
+        background-color:  #ff7066
+        color: white
+        width: 20rem
+    &__grid
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        grid-template-rows: repeat(2,1fr)
+        width: 100%
+        // height: 100px
+    &__items
+        height: 10rem
+        // border: 1px solid black
+        // background-color: red
+        margin: .4rem 0
+        padding: 0
+            
+        &--one 
+            grid-column: 1 / span 3
+            grid-row: 1 / span 2
+            background-color: #eeeeeea1
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+        &--two
+            grid-column: 1 / span 3
+            background-color: #cccccc70 
+            display: none 
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #e6e6e680
+                width: 50%
+                height: 50%
+                font-size: 1.3rem  
+        &--three
+            grid-column: 1 / span 3
+            background-color: #eeeeeea1
+            display: none 
+
+            :nth-child(1)
+                display: flex
+                padding-left: .3rem
+                align-items: center
+                margin-top: 5rem 
+                color: white
+                background-color: #91919180
+                width: 50%
+                height: 50%
+                font-size: 1.3rem 
+.conditions
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    grid-template-rows: repeat(2,1fr)
+    height: 20rem
+    margin-bottom: 5rem
+    background-color: #e6e6e680
+    &__free-shipping
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 100%
+        grid-row: 1
+        grid-column: 1
+        :nth-child(3)
+            font-size: .8rem
+            text-align: center
+            justify-content: center
+
+    &__shipping-time
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 100%
+        grid-row: 1
+        grid-column: 2
+        :nth-child(3)
+            font-size: .8rem
+            text-align: center
+            justify-content: center
+        
+
+    &__return
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 100%
+        grid-row: 2
+        grid-column: 1
+        :nth-child(3)
+            font-size: .8rem
+            text-align: center
+            justify-content: center
+
+    &__reembolso
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 100%
+        grid-row: 2
+        grid-column: 2
+        :nth-child(3)
+            font-size: .8rem
+            text-align: center
+            justify-content: center
+
+.social
+    margin-bottom: 2rem
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    &__follow-us
+        display: flex
+        justify-content: center
+        margin-bottom: 1.3rem
+        color: #7c7c7c
+    &__networks
+        display: flex
+        justify-content: space-around
+        margin: 0 3rem
+    &__network
+        display: flex
+        justify-content: center
+        align-items: center
+        border: 2px solid #ff7066
+        margin: 0 .2rem
+        width: 2.7rem
+        height: 2.8rem
+        border-bottom-right-radius: .5rem
+        border-bottom-left-radius: .5rem
+    &__divisor
+        display: flex
+        width: 20rem
+        height: .13rem
+        background-color: #888888
+        margin: 2rem 1rem
+
+.newsletter
+    margin-bottom: 2rem
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    &__news
+        color: #888888
+    &__mail
+        width: 15rem
+        height: 2rem
+        margin: 1rem 0
+    &__subscribeBtn
+        width: 15rem
+        background-color: #ff7066
+        color: white
+        height: 2rem
+        margin: 1rem 0
+        border: none
+        font-weight: bold
+    &__divisor
+        display: flex
+        width: 20rem
+        height: .13rem
+        background-color: #888888
+        margin: 2rem 1rem
+
+.us
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    color: #ff7066
+    &__contactimg
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 3rem
+        height: 3rem
+        margin: .2rem
+        border: 1px solid #ff7066
+        background-color: #ff7066
+        border-radius: 50%
+    &__aboutimg
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 3rem
+        height: 3rem
+        margin: .2rem
+        border: 1px solid #ff7066
+        background-color: #ff7066
+        border-radius: 50%
+    &__conditionsimg
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 3rem
+        height: 3rem
+        margin: .2rem
+        border: 1px solid #ff7066
+        background-color: #ff7066
+        border-radius: 50%
+.copy
+    margin-top: 2rem 
+    width: 100%
+    height: 2.5rem
+    background-color: #ff3e31
+    display: flex
+    text-align: center
+    justify-content: center
+    align-items: center
+
+
+// $breakpoint-tablet: 768px
+@media screen and (min-width: $break-medium) 
+
+    *
+        font-size: 20px
+
+    .navbar
+        &__element
+            &--burguer
+                display: flex
+                flex-direction: row
+                border: 1px dashed black
+                width: 15rem
+                justify-content: space-around
+                align-items: self-start
+                margin-top: 0
+
+            &--user
+                margin-left: 8rem
+        &__ham
+            width: 5rem
+            transition: all .5s ease
+
+            &--firs
+                height: 10rem
+                background-color: #ff574b
+            &--second
+                height: 6rem
+                background-color: #449cb3
+            &--second:hover
+                height: 10rem
+            &--third
+                height: 6rem
+                background-color: #ddba21
+            &--third:hover
+                height: 10rem
+
+    .intro
+        margin-top: 8rem
+        &__name
+            justify-content: left
+            margin-left: 2rem
+
+
+
+
+@media only screen and (min-width: $break-large)
