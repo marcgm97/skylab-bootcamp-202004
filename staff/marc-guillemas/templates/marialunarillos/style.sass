@@ -1,8 +1,8 @@
-$break-small: 320px
-$break-medium: 768px
-$break-large: 1200px
+// $break-medium: 768px
+// $break-large: 1200px
 
-@media screen and (min-width: $break-small) 
+// $breakpoint-mobile: 768px
+// @media (min-width: $break-medium) 
 
 *
     margin: 0
@@ -112,6 +112,7 @@ $break-large: 1200px
             
         &--one 
             grid-column: 1 / span 3
+            grid-row: 1 
             background-color: #eeeeeea1
             :nth-child(1)
                 display: flex
@@ -660,11 +661,13 @@ $break-large: 1200px
     align-items: center
 
 
-// $breakpoint-tablet: 768px
-@media screen and (min-width: $break-medium) 
+$breakpoint-tablet: 768px
+@media (min-width: $breakpoint-tablet) 
 
     *
         font-size: 20px
+        box-sizing: border-box
+        margin: 0
 
     .navbar
         &__element
@@ -703,7 +706,153 @@ $break-large: 1200px
             justify-content: left
             margin-left: 2rem
 
+        &__images
+            height: 16rem
+
+        &__img
+            height: 16rem
+
+    .utensils
+
+        &__grid
+            display: grid
+            padding: 0 1.5rem
+            grid-gap: .8rem
+            grid-template-columns: repeat(3,1fr)
+            grid-template-rows: repeat(6,1fr)
+            width: 100%
+            margin: 0
+            // height: 100px
+        &__items
+            height: 100%
+            display: flex
+            align-items: flex-end
+
+            &--one 
+                grid-column: 1 / 2
+                grid-row: 1 / 3
+                
+            &--two
+                grid-column: 2 / span 2
+                
+            &--three
+                grid-column: 2 / span 2
+                grid-row: 2  
+                
+            &--four
+                grid-column: 1 / span 2
+                
+            &--five
+                grid-column: 1 / span 2
+                
+            &--six
+                grid-column: 3 / span 1
+                grid-row: 3 / span 2
+               
+            &--seven
+                grid-column: 2 / span 2
+                 
+            &--eight
+                grid-column: 2 / span 2
+                
+            &--nine
+                grid-column: 1 
+                grid-row: 5 / span 2
+               
+
+    .ingredients
+        
+        &__grid
+            display: grid
+            padding: 0 1.5rem
+            grid-gap: .8rem
+            grid-template-columns: repeat(3,1fr)
+            grid-template-rows: repeat(4,1fr)
+            width: 100%
+            margin: 0
+            // height: 100px
+        &__items
+            height: 100%
+            display: flex
+            align-items: flex-end
+
+            &--one 
+                grid-column: 1 / 2
+                grid-row: 1 / 3
+              
+            &--two
+                grid-column: 2 / span 2
+                
+            &--three
+                grid-column: 2 / span 2
+                grid-row: 2  
+               
+            &--four
+                grid-column: 1 / span 2
+               
+            &--five
+                grid-column: 1 / span 2
+                
+            &--six
+                grid-column: 3 / span 1
+                grid-row: 3 / span 2
+                 
+
+    .party
+    
+        &__grid
+            display: grid
+            padding: 0 1.5rem
+            grid-gap: .8rem
+            grid-template-columns: repeat(3,1fr)
+            grid-template-rows: repeat(2,1fr)
+            width: 100%
+            margin: 0
+            // height: 100px
+        &__items
+            height: 100%
+            display: flex
+            align-items: flex-end
+
+            &--one 
+                grid-column: 1 / 2
+                grid-row: 1 / 3
+               
+            &--two
+                grid-column: 2 / span 2
+                 
+            &--three
+                grid-column: 2 / span 2
+                grid-row: 2  
+              
+    .blog
+      
+        &__grid
+            display: grid
+            padding: 0 1.5rem
+            grid-gap: .8rem
+            grid-template-columns: repeat(3,1fr)
+            grid-template-rows: repeat(2,1fr)
+            width: 100%
+            margin: 0
+            // height: 100px
+        &__items
+            height: 10rem
+            display: flex
+            align-items: flex-end
+
+            &--one 
+                grid-column: 1 
+                grid-row: 1 / span 2
+               
+            &--two
+                grid-column: 2
+                grid-row: 1 / span 2
+                 
+            &--three
+                grid-column: 3
+                grid-row: 1 / span 2  
 
 
 
-@media only screen and (min-width: $break-large)
+
