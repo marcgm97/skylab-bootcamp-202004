@@ -9,57 +9,53 @@ function Browser({ token, spotyToken, onSessionExpired }) {
     const [error, setError] = useState(undefined);
 
     const handleSubmit = (event) => {
-        event.preventDefault();
-        let { browser, query } = event.target;
-        browser = browser.value;
-        const browserquery = query.value;
+        event.preventDefault()
+        let { browser, query } = event.target
+        browser = browser.value
+        const browserquery = query.value
 
         if (browser === 'album') {
             searchAlbum(spotyToken, browserquery, (error, results) => {
-                if (error) setError('No matches found!'); 
 
-                setAlbumResults(results);
-            });
-        };
-
+                if (error) setError('No matches found!')
+           
+                setAlbumResults(results)
+            })
+        }
+      
         if (browser === 'artist') {
             searchArtist(spotyToken, browserquery, (error, results) => {
                 try {
-                    if (error) throw new Error("fail");
+                    if (error) throw new Error("fail")
 
-                    setArtistResults(results);
+                    setArtistResults(results)
                 } catch (error) {
-                    console.error(error.message);
-                };
-            });
-        };
+                    console.error(error.message)
+                }
+            })
+        }
 
-        if (browser === 'track') {
-            searchTrack(spotyToken, browserquery, (error, results) => {
-                try {
-                    if (error) console.log(error);
+        if (browser === 'track') searchTrack(spotyToken, browserquery, (error, results) => {
+            if (error) console.log(error)
 
-                    setTrackResults(results);
-                } catch (error) {
-                    console.error("fail");
-                }; 
-            }); 
-        };
+            setTrackResults(results)
+            console.error("fail")
+        })
 
-        if (browser === 'playlist') {
-            searchPlaylists(spotyToken, browserquery, (error, results) => {
-                try {
-                    if (error) console.log(error);
+        if (browser === 'playlist') searchPlaylists(spotyToken, browserquery, (error, results) => {
+            try {
+                if (error) console.log(error)
 
-                    setPlaylistsResults(results);
-                } catch (error) {
-                    console.error("fail");
-                };
-            });
-        };
-    };
+                setPlaylistsResults(results)
+            } catch{
+                console.error("fail")
+            }
+        })
+    
+}
 
-    return <section className="browser">
+return <section className="browser-results">
+    <section className="browser">
         <h2 className="browser__title">Browser</h2>
         <form className="browser__form" onSubmit={handleSubmit} >
             <select name="browser">
@@ -73,12 +69,12 @@ function Browser({ token, spotyToken, onSessionExpired }) {
             <input type="text" name="query" placeholder="What do you want to listen?" />
             <button>Submit</button>
         </form>
-        <section className="results">          
-            {error && <Feedback message={error}/>}
-            {trackResults && <TrackResults results={trackResults} token={token} spotyToken={spotyToken} />}
-            {albumResults && <AlbumResults results={albumResults} token={token} spotyToken={spotyToken} onSessionExpired={handleSessionExpired} />}
-            {playlistsResults && <PlaylistsResults results={playlistsResults} token={token} />}
-            {artistResults && <ArtistResults results={artistResults} token={token} spotyToken={spotyToken} />}
-        </section>
+    </section>  
+    <section className="results">  
+        {error && <Feedback message={error}/>}
+        {trackResults && <TrackResults results={trackResults} token={token} spotyToken={spotyToken} />}
+        {albumResults && <AlbumResults results={albumResults} token={token} spotyToken={spotyToken} />}
+        {playlistsResults && <PlaylistsResults results={playlistsResults} token={token} />}
+        {artistResults && <ArtistResults results={artistResults} token={token} spotyToken={spotyToken} />}
     </section>
 }

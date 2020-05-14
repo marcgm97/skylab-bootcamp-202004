@@ -16,11 +16,11 @@ function AlbumResults({ results, token, spotyToken, onSessionExpired }) {
     };
 
     function handleToggleAlbum(name, image) {
-        const favorite = {name,image};
-        const flag = 'favoriteAlbums';
-        toggleFavoriteMusic(flag, token, favorite, (error, results) => {
-            if(error.message === 'Invalid token') onSessionExpired();
-        });
+        const favorite = { name, image }
+        const flag = 'favoriteAlbums'
+        toggleFavoriteMusic(flag, token, favorite, error => {
+            if (error && error.message === 'Invalid token') onSessionExpired()
+        })
     };
 
     return <>
@@ -32,7 +32,7 @@ function AlbumResults({ results, token, spotyToken, onSessionExpired }) {
                             event.preventDefault()
                             handleOnAlbum(id)
 
-                        }}><img className="disc-list__image" src={image}/></a><button onClick={()=>handleToggleAlbum(name,image)}>I like it!</button> 
+                        }}><img className="disc-list__image" src={image}/></a><button className="disc-list__btn" onClick={()=>handleToggleAlbum(name,image)}>I like it!</button> 
                     </li>
                 })
             }
