@@ -14,6 +14,15 @@ function ArtistResults({ results, token }) {
             setArtists(resultsAlbums)   
         })    
     }
+    
+    function handleToogleArtist(name,images){
+    const flag = 'favoriteArtist'
+    const favorite= {name,images}
+    toggleFavoriteMusic(flag,token,favorite,(error,results) =>{
+        
+    })
+    
+    }
 
     return<>
         {results.length ? <ul>
