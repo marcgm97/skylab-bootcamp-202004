@@ -1,6 +1,12 @@
+const { useState, useEffect } = React
+
 function TrackResults({results}){
-    debugger
-    console.log(results)
+    
+    const [trackResults, setTrackResults] = useState(undefined);
+
+    useEffect(() => {
+        setTrackResults(undefined);
+    }, [results]);
 
     return <>
         {results.length ? <ul>
@@ -11,6 +17,8 @@ function TrackResults({results}){
             })
         }
         </ul> : console.error("fail")}
+
+        {trackResults && <results trackResults={trackResults} />}
     </>
 }
         

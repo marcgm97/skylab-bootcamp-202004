@@ -40,12 +40,7 @@ function Navbar({onChangeView }){
             
             setView('login')
         }
-        */
-        
-        
-        
-        
-        
+        */   
         
     return <nav className="navbar">
         <ul className="navbar__list">
@@ -100,7 +95,4 @@ function Navbar({onChangeView }){
             </li>
         </ul>
     </nav>
-        
-     
-   
 }

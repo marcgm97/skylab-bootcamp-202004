@@ -6,7 +6,7 @@ class App extends Component {
 
         this.state = {
             view: 'login',
-            Spotytoken: "BQDXzlsw5RPU67H_LBeyEnQliwEgsmA4SotLrZ2_Is9EJmL3lcn-MRrdkScjolsbwPBv3jNUHaMjtdPODneAPst0gaQwr-wzmZX2meqy7pC4ZrHksuPM4NyPBYrh-eglVwFxz8Fcick",
+            Spotytoken: "BQBV1Uezj2zxfOCE1NDtoeCFED8ZHP6QEgsKw5_z-A_TxgV1-wBTASKHxLY3sp6skd23Y4kr2XB_Y_I_STIOvhfSVnSvVXVe-UXGMQRjLx2tK3Mq8QL3NCXQmTKo7IkAgFITWfck4yU",
             token: undefined
         }
     }

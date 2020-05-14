@@ -21,13 +21,11 @@ function searchTrack(token, query, callback) {debugger
       if (error) console.log(error);
       console.log(status)
       if (status === 200) {
-        debugger;
         const queryBody = JSON.parse(body);
         const { tracks } = queryBody;
         const { items } = tracks;
         for (let i = 0; i < items.length; i++) {
           let { name, album } = items[i];
-
           let { artists } = album;
           let artistName = artists[0].name;
           let { preview_url } = items[i];
@@ -35,7 +33,7 @@ function searchTrack(token, query, callback) {debugger
           results.push(object);
         }
         callback(undefined, results);
-      }else{
+      } else {
         const {error} = JSON.parse(body)
         callback(new Error(error.message))
       }

@@ -3,12 +3,9 @@ const { useState, useEffect } = React
 function Browser({ token }) {
 
     const [trackResults, setTrackResults] = useState(undefined);
-    const [artistResults, setArtistResults] = useState();
-
+    const [artistResults, setArtistResults] = useState(undefined);
     const [albumResults, setAlbumResults] = useState(undefined)
-
     const [playlistsResults, setPlaylistsResults] = useState(undefined)
-
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -27,31 +24,22 @@ function Browser({ token }) {
         })
        
         if (browser === 'album') {
-            searchAlbum(token, browserquery, (error, results) => {
-                
+            searchAlbum(token, browserquery, (error, results) => { 
 
                 if (error) console.log(error)
 
                 setAlbumResults(results)
-
             })
         }
 
         if (browser === 'track') searchTrack(token, browserquery, (error, results) => {
-
 
             if (error) console.log(error)
 
             setTrackResults(results)
 
             console.error("fail")
-
-
         })
-
-
-        if (browser === 'playlist') searchPlaylist()
-
   
         if (browser === 'playlist') searchPlaylists(token, browserquery, (error, results) => {
             try{
@@ -62,7 +50,6 @@ function Browser({ token }) {
                 console.error("fail")
             }
         })
-
     }
 
     return <section className="browser">
@@ -83,7 +70,7 @@ function Browser({ token }) {
         </section>
         <section className="results">
             {trackResults && <TrackResults results={trackResults} />}
-            {artistResults && <ArtistResults results={artistResults} />}
+            {artistResults && <ArtistResults results={artistResults} token={token} />}
             {albumResults && <AlbumResults results={albumResults} token={token} />}
             {playlistsResults && <PlaylistsResults results={playlistsResults} />}
         </section>

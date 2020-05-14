@@ -11,7 +11,7 @@ function searchUsers(token, query, callback) {
         { Authorization: `Bearer ${token}` },
         (error, status, body) => {
             if (error) return callback(error)
-debugger
+
             if (status === 200) {
                 const user = JSON.parse(body)
 
@@ -48,7 +48,6 @@ debugger
 
                             callback(new Error(error))
                         }
-
                     }
                 )
             } else {

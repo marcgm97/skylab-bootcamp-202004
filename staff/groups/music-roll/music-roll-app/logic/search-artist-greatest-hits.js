@@ -15,11 +15,9 @@ function searchArtistGreatestHits(id,token, callback) {
       { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       (error, status, body) => {
         if (error) console.log(error);
-        console.log(status)
-        debugger;
+        console.log(status);
         if (status === 200) {
-          const results = []
-           
+          const results = [];
   
           const { tracks } = JSON.parse(body);
   
@@ -30,16 +28,12 @@ function searchArtistGreatestHits(id,token, callback) {
               preview_url,
               
             } = tracks[i];
-            debugger;
-  
-            
             
             let object = { preview_url, id, name };
             results.push(object);
-          }
-          debugger;
+          };
           callback(undefined, results);
-        }else{
+        } else {
           const {error} = JSON.parse(body)
           callback(new Error(error.message))
         }

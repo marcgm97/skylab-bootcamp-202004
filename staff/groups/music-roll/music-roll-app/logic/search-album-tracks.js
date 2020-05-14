@@ -1,6 +1,3 @@
-
-
-
 function searchAlbumTracks(id,token,callback) {
 
     String.validate.notVoid(token)
@@ -28,10 +25,9 @@ function searchAlbumTracks(id,token,callback) {
                 results.push(object)
             }
             callback(undefined,results)
-            }else{
+            } else{
                 const {error : {message} } = JSON.parse(body)
                 callback(new Error(message))
             }
-
-})
+    })
 }
