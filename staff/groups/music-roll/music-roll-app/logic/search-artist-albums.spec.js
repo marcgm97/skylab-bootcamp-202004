@@ -1,5 +1,4 @@
 describe("searchArtistalbums", () => {
-  debugger;
   let id;
   const VALID_QUERIES = ["extremoduro", "platero y tu", "los suaves"];
   const queryUrl = encodeURI(VALID_QUERIES.random()).concat(
@@ -7,17 +6,13 @@ describe("searchArtistalbums", () => {
   );
   let token ="BQDj85_ESBdFATHHkRTgRiKenuuzbHzks13lwymWotcfH-2TMMr8N2pNTrdJsgR917YVxSki8Ui7i1HhA7CpaDNkq6bbxw8CoC83poIvWQQO9Zaxbx1X0mugCVgJ1BAEjQsIqLkzm8o2YlpUDPP_DcQGgwh-UcSwQEhKGMub30nIIrHsgaFp3pE6wgNh";
   beforeEach((done) => {
-    debugger;
-    call(
-      "GET",
-      `https://api.spotify.com/v1/search?q=${queryUrl}`,
+    call("GET", `https://api.spotify.com/v1/search?q=${queryUrl}`,
       undefined,
       { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       (error, status, body) => {
         if (error) return done(new Error(error.message));
 
         if (status === 200) {
-          debugger;
           const {
             artists: { items },
           } = JSON.parse(body);
@@ -28,11 +23,10 @@ describe("searchArtistalbums", () => {
       }
     );
   });
+
   it("should find  artist albums by id", (done) => {
-    debugger;
 
     searchArtistAlbum(`${id}`, `${token}`, (error, results) => {
-      debugger;
       expect(error).to.be.undefined;
       expect(results).to.be.an("array");
       expect(results).to.exist;
@@ -99,7 +93,6 @@ it('should fail when id its not a string', () => {
    }).to.throw(Error, 'undefined is not a string')
   })
 
-
   it('should fail when token its not a string', () => {
        id = `${id}`
       
@@ -131,6 +124,7 @@ it('should fail when id its not a string', () => {
            searchAlbum(id, undefined, function(){})
        }).to.throw(Error, 'undefined is not a string')
       })
+      
       it('should fail when function its not a function', () => {
          token = 'hola'
          query = 'hola'
@@ -164,10 +158,3 @@ it('should fail when id its not a string', () => {
          }).to.throw(Error, 'undefined is not a function')
         }) 
     })
-  
-
-
-
-
-
- 

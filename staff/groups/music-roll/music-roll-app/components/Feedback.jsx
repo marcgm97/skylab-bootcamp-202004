@@ -1,3 +1,3 @@
-function  Feedback({message}){
-    return  <p className ="feedback">{message}</p> 
-}
+function Feedback({ message }) {
+    return <p className ="feedback">{message}</p> 
+};

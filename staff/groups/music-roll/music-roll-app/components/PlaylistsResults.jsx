@@ -1,4 +1,4 @@
-function PlaylistsResults({results}) {
+function PlaylistsResults({ results }) {
     return <section className="playlists-results">
         <ul className="playlists-results__list">
             {results.map(({ name, description, images, id }) => {

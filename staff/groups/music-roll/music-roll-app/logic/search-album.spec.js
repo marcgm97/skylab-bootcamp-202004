@@ -11,7 +11,6 @@ describe("search-album", () => {
         expect(results.length).to.be.greaterThan(0);
   
         results.forEach((result) => {
-            debugger
           expect(result).to.be.an("object");
           expect(result.name).to.exist;
           expect(result.name).to.be.a("string");
@@ -31,7 +30,6 @@ describe("search-album", () => {
       query = "chill beats";
       token = '456'
       searchAlbum(token, query, (error, results) => {
-        debugger;
         expect(results).to.undefined;
         expect(error).to.exist;
         expect(error).to.be.an.instanceOf(Error)
@@ -39,8 +37,6 @@ describe("search-album", () => {
         done();
       });
     }); 
-  
-   
   
     it('should fail when token its not a string', () => {
           let query = 'hola'
@@ -72,8 +68,7 @@ describe("search-album", () => {
            expect(()=>{
                searchAlbum(undefined, query, function(){})
            }).to.throw(Error, 'undefined is not a string')
-          })
-      
+          })   
       
           it('should fail when query its not a string', () => {
               let token = 'hola'
@@ -107,7 +102,6 @@ describe("search-album", () => {
                }).to.throw(Error, 'undefined is not a string')
               })
           
-  
               it('should fail when function its not a function', () => {
                   let token = 'hola'
                   let query = 'hola'
@@ -140,7 +134,4 @@ describe("search-album", () => {
                        searchAlbum(token, query, undefined)
                    }).to.throw(Error, 'undefined is not a function')
                   }) 
-   
-  })
-  
-   
+  }) 

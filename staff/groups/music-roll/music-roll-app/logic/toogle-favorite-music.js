@@ -1,18 +1,12 @@
 function toggleFavoriteMusic(flag, token, favorite, callback) {
-  debugger;
 
-  call(
-    "GET",
-    "https://skylabcoders.herokuapp.com/api/v2/users",
+  call("GET", "https://skylabcoders.herokuapp.com/api/v2/users",
     undefined,
-    {
-      Authorization: `Bearer ${token}`,
-    },
+    { Authorization: `Bearer ${token}` },
     (error, status, body) => {
       if (error) return callback(error);
 
       if (status === 200) {debugger
-        debugger;
 
         const user = JSON.parse(body);
         if (user[flag]) {
@@ -23,14 +17,10 @@ function toggleFavoriteMusic(flag, token, favorite, callback) {
         } else {
           user[flag] = [favorite];
         }
-        call(
-          "PATCH",
-          "https://skylabcoders.herokuapp.com/api/v2/users",
+        
+        call("PATCH", "https://skylabcoders.herokuapp.com/api/v2/users",
           JSON.stringify(user),
-          {
-            Authorization: `Bearer ${token}`,
-            "Content-type": "application/json",
-          },
+          { Authorization: `Bearer ${token}`, "Content-type": "application/json" },
           (error, status, body) => {
             if (error) return callback(error);
 

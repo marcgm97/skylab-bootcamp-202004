@@ -15,7 +15,6 @@
 
     <script class="mocha-init">
         mocha.setup('bdd')
-       /*   mocha.checkLeaks() */
         mocha.timeout(50000)
 
       const { expect } = chai;
@@ -40,7 +39,6 @@
     <script src="logic/search-artist-greatest-hits.spec.js"></script>
     <script src="logic/search-artist-albums.js"></script>
     <script src="logic/search-artist-albums.spec.js"></script>
-    
     
     <script class="mocha-exec">
       mocha.run();

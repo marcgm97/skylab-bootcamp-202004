@@ -3,7 +3,7 @@ function searchArtist(token, query, callback) {
     const queryUrl = encodeURI(query).concat(`&type=artist&offset=0&limit=5`);
 
     call("GET", `https://api.spotify.com/v1/search?q=${queryUrl}`,
-    undefined, {"Content-Type": "application/json", Authorization: `Bearer ${token}`},
+    undefined, { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
     (error, status, body) =>  {
         if (error) console.error(error)
 
@@ -14,9 +14,9 @@ function searchArtist(token, query, callback) {
 
             if (total === 0) { 
                 return callback(new Error('Not matches found'))
-            } 
+            };
 
-            items.map(({name, id, images}) => {
+            items.map(({ name, id, images }) => {
                 const object = {};
                 object.name = name;
                 object.id = id;
@@ -30,5 +30,5 @@ function searchArtist(token, query, callback) {
             })           
             callback(undefined, results)
         }
-    })
-}
+    });
+};

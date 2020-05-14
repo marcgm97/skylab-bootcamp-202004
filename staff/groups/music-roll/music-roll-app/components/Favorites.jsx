@@ -1,20 +1,19 @@
 const { useState, useEffect } = React
 
-function Favorites({ token}) {debugger
+function Favorites({ token }) {
 
-    const [favorites, setFavorites] = useState(undefined)
+    const [favorites, setFavorites] = useState(undefined);
 
-    useEffect(() => {debugger
-        console.log('hola he entrado')
+    useEffect(() => {
         retrieveFavorites(token, (error, results) => {
-            if(error) console.log(error)
-            setFavorites(results)
-        })
-    },[])
-debugger
+            if(error) console.log(error);
+            
+            setFavorites(results);
+        });
+    },[]);
+
     return <section className="favorites">
-        <h2>Music that i love</h2>
-        
+        <h2>Music that I love</h2>      
         <ul> 
             {favorites && favorites.favoriteArtist.map(({images, name}) => {
                 return  <li>
@@ -22,7 +21,6 @@ debugger
                    <p>{name}</p>
                </li>
             })}
-    
         </ul>
         <ul> 
             {favorites  && favorites.favoriteAlbum.map(({image, name}) => {
@@ -31,7 +29,6 @@ debugger
                    <p>{name}</p>
                </li>
             })}
-    
         </ul>
         <ul> 
             {favorites && favorites.favoriteTrack.map(({name,artistName, preview_url}) => {
@@ -41,11 +38,7 @@ debugger
                    <p>{name}</p>
                </li>
             })}
-    
         </ul>
-
-
     </section>
-
 }
 

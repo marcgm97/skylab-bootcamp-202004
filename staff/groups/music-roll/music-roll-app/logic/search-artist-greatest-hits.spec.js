@@ -4,10 +4,8 @@ describe("searchArtistgreatesthits", () => {debugger
     const queryUrl = encodeURI(VALID_QUERIES.random()).concat(`&type=artist&offset=0&limit=1`);
     let token ="BQAgVv_DvbfAHMrsh0xl-EXS7-6Oo1l_OUkaEvonzucoRFtH2fxBLEmXH2NwIb-1SybFQqV_RUFK5H-7ZAPWnCb5GdbSXNbShcvAk0MlBKxJRFzvt9gLbm1LaSUe4wY4O1e6-AelvQ0MvnNFipRWPOmCQ1mwAIZ9QYCC-T1dNGJEFA4YDXxXJMMtOpVF";
     beforeEach((done) => {
-   debugger
-    call(
-      "GET",
-      `https://api.spotify.com/v1/search?q=${queryUrl}`,
+
+    call("GET", `https://api.spotify.com/v1/search?q=${queryUrl}`,
       undefined,
       { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       (error, status, body) => {
@@ -22,10 +20,11 @@ describe("searchArtistgreatesthits", () => {debugger
       }
     );
   });
-it('should find  artist greatest-hits by id', done =>{debugger
+
+it('should find  artist greatest-hits by id', done => {
    
     searchArtistGreatestHits(`${id}`,`${token}`, (error,results) => {
-      debugger
+  
       expect(error).to.be.undefined;
       expect(results).to.be.an("array")
       expect(results).to.exist
@@ -41,7 +40,7 @@ it('should find  artist greatest-hits by id', done =>{debugger
 })
 
  it('should throw an error if id its not correct', done=>{
-  searchArtistGreatestHits('asdasdasdasd',`${token}`, (error,results) => {debugger
+  searchArtistGreatestHits('asdasdasdasd',`${token}`, (error,results) => {
     expect(error).to.exist
     expect(results).to.be.undefined
     expect(error).to.be.an.instanceOf(Error)
@@ -50,8 +49,8 @@ it('should find  artist greatest-hits by id', done =>{debugger
   })
 })
 
-it('should throw an error if token its not correct', done=>{debugger
-  searchAlbumTracks(`${id}`,'adasdadas341231', (error,results) => {debugger
+it('should throw an error if token its not correct', done=>{
+  searchAlbumTracks(`${id}`,'adasdadas341231', (error,results) => {
     expect(error).to.exist
     expect(results).to.be.undefined
     expect(error).to.be.an.instanceOf(Error)
@@ -157,9 +156,3 @@ it('should fail when id its not a string', () => {
          }).to.throw(Error, 'undefined is not a function')
         }) 
     })
-
-
-
-
-
-

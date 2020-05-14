@@ -1,11 +1,9 @@
 const {useState} = React
 
-function Navbar({onChangeView }){
+function Navbar({ onChangeView }) {
     
-    const [view, setView] = useState('home')
+    const [view, setView] = useState('home');
     
-    // <a className={`home__link ${this.state.view === 'users' ? 'home__link--active' : ''}`} href="" onClick={this.handleUsers}>Users </a>
-
     return <nav className="navbar">
         <ul className="navbar__list">
             <li className={`navbar__item ${view === 'home' ? 'navbar__item--active left' : ''}`}>
@@ -15,7 +13,6 @@ function Navbar({onChangeView }){
                     setView('home')
                     onChangeView('home')
                 }}><i className="fas fa-home"></i></a>
-
             </li>
             <li className={`navbar__item ${view === 'browser' ? 'navbar__item--active center' : ''}`}>
                 <a href="" onClick = {event => {
@@ -43,28 +40,4 @@ function Navbar({onChangeView }){
             </li>
         </ul>
     </nav>
-        
-     
-   
 }
-
-{/* <nav class="navbar">
-<ul class="navbar__list">
-    <li class="navbar__item">
-        <a href=""><i class="fas fa-home"></i></a>
-     </li>
-    <li class="navbar__item">
-        <a href=""><i class="fas fa-music"></i></a>
-     </li>
-    <li class="navbar__item">
-        <a href=""><i class="far fa-heart"></i></a>
-     </li>
-    <li class="navbar__item">
-        <a href=""><i class="fas fa-users"></i></a>
-     </li>
-    <li class="navbar__item">
-        <a href=""><i class="fas fa-sign-out-alt"></i></a>
-    </li>
-</ul>
-
-</nav> */}

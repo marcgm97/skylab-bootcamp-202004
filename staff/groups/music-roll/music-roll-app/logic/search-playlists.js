@@ -1,23 +1,15 @@
 function searchPlaylists(token, query, callback) {
  
-  String.validate.notVoid(token)
+  String.validate.notVoid(token);
 
-  String.validate(query)
+  String.validate(query);
 
-  Function.validate(callback)
-    // const queryUrl = query
-    //   .split(" ")
-    //   .join("%20")
-    //   //.concat('&type=playlist&limit=5');
-  
-  debugger
-    call(
-      "GET",
-      `https://api.spotify.com/v1/search?q=${encodeURI(query)}&type=playlist&limit=5`,
+  Function.validate(callback);
+
+    call("GET", `https://api.spotify.com/v1/search?q=${encodeURI(query)}&type=playlist&limit=5`,
       undefined,
       { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
       (error, status, body) => {
-        debugger
         if (error) callback(error)
         
         if (status === 200) {
@@ -27,7 +19,7 @@ function searchPlaylists(token, query, callback) {
             callback(new Error('Not matches found'))
           }
 
-          const results = items.map(({name, description, images, id}) => {
+          const results = items.map(({ name, description, images, id }) => {
             const obj = {}
             obj.name = name
             obj.description = description
@@ -36,10 +28,9 @@ function searchPlaylists(token, query, callback) {
             return obj
         })
           callback(undefined, results)
-        }else{
+        } else {
           const {error} = JSON.parse(body)
           callback(new Error(error.message))
         }
     })
 }
-  

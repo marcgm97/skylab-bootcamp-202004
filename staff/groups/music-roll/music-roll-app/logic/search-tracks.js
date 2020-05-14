@@ -1,10 +1,10 @@
 function searchTrack(token, query, callback) {
-  String.validate.notVoid(token)
-  String.validate(token)
+  String.validate.notVoid(token);
+  String.validate(token);
 
-  String.validate(query)
+  String.validate(query);
 
-  Function.validate(callback)
+  Function.validate(callback);
 
   const queryUrl = encodeURI(query).concat(`&type=track&offset=0&limit=5`);
   const results = [];
@@ -13,7 +13,7 @@ function searchTrack(token, query, callback) {
     undefined, { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
     (error, status, body) => {
       if (error) console.log(error);
-      console.log(status)
+      console.log(status);
       if (status === 200) {
         
         const {tracks : { items, total}  } = JSON.parse(body)
@@ -23,7 +23,6 @@ function searchTrack(token, query, callback) {
         }
         for (let i = 0; i < items.length; i++) {
           let { name, album } = items[i];
-
           let { artists } = album;
           let artistName = artists[0].name;
           let { preview_url } = items[i];
@@ -31,10 +30,10 @@ function searchTrack(token, query, callback) {
           results.push(object);
         }
         callback(undefined, results);
-      }else{
+      } else {
         const {error} = JSON.parse(body)
         callback(new Error(error.message))
       }
     }
   );
-}
+};

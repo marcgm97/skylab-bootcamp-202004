@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap')
+
 input -internal-autofill-selected
     background-color: none !important
+
 .login 
     display: flex
     background-image:  linear-gradient(to bottom, #d900ff, #008cff)
     height: 100vh
     justify-content: center
     align-items: center
+
     &__container
         display: flex
         flex-direction: column
@@ -16,25 +19,28 @@ input -internal-autofill-selected
         border-radius: 20px
         height: 60vh
         width: 80% 
-        // border: 1px solid black
+       
     &__header
         color: #0000008f
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
         display: flex
         justify-content:  center
         margin-top: 0
+
     &__divider
         width: 80%
         height: .1rem
         margin-top: -3rem
         background-color: #0000008f
         border: 0
+
     &__form
         display: flex
         flex-direction: column
         justify-content: center
         align-items: center
-        margin-top: -2rem 
+        margin-top: -2rem
+
     label
         display: flex
         align-self: self-start
@@ -42,6 +48,7 @@ input -internal-autofill-selected
         color: #00000088
         content-shadow: 0 0 10px dodgerBlue
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
     &__input
         margin: .5rem
         width: 15rem
@@ -51,14 +58,18 @@ input -internal-autofill-selected
         border: 0
         background-color: #ffffff5b
         transition: 1s ease
+
     &__input:valid 
         background-color:  #ffffff5b
+
     &__input:focus
         transition: all 1s ease  
         border-radius: 0   
         box-shadow: 0 0 10px dodgerBlue
+
     &--mail:hover + label[for=email]
         color: red
+
     &__button
         justify-content: center
         border-radius: 30px
@@ -67,9 +78,9 @@ input -internal-autofill-selected
         background-color: #ffffff3f
         height: 2rem
         width: 35%
+
     &__button:hover
         transition: .4s ease all
-        // background-color: 
         width: 40%
 
     a 
@@ -79,24 +90,11 @@ input -internal-autofill-selected
         margin: 3rem 0 0 2rem 
         color: black
         font-size: .7rem
+
     a:active
         transition: .35s ease
         color: blue
-        
-//   background-image:  linear-gradient(to bottom, #7F00FF ,#E100FF)
-    // .box 
-    // border-radius: 35px 0px 35px 0px
-    // -moz-border-radius: 35px 0px 35px 0px
-    // -webkit-border-radius: 35px 0px 35px 0px
-    // font-family: 'Ubuntu', sans-serif
-    // text-align: center
-    // color: rgb(0, 0, 0) 
-    // background: black
-    // padding: 20px 20px 20px 20px
-    // margin: 0 0 25px
-    // overflow: hidden
     
 *
     box-sizing: border-box
     margin: 0
-

@@ -1,14 +1,13 @@
 describe("search-track", () => {
-    let query, token
+    let query, token;
     const VALID_QUERIES = ['chill', 'beats', 'californication'];
-    const INVALID_QUERIES = ['asdlkjflasf', 'aaaaasldkf0980', 'oaaaaa55555asdf']
-    token = "BQDcMbf7MuW3qQxUD1dMNueMlZXCAYsh37nyvv8of5gdnU_Z554KIaXUR2uKdJThMJv1VMe1k5QhsKbnEK9Vr6K5PVbimyYNQ9lEhpzWHhqJRyXVvfhHue5z4zHQwmte5J-R3yDRrUjsbthH372fIdefkI-2Rz51v0v8FdpgeyN3zl-heYBfqJGv_3cz"
+    const INVALID_QUERIES = ['asdlkjflasf', 'aaaaasldkf0980', 'oaaaaa55555asdf'];
+    token = "BQDcMbf7MuW3qQxUD1dMNueMlZXCAYsh37nyvv8of5gdnU_Z554KIaXUR2uKdJThMJv1VMe1k5QhsKbnEK9Vr6K5PVbimyYNQ9lEhpzWHhqJRyXVvfhHue5z4zHQwmte5J-R3yDRrUjsbthH372fIdefkI-2Rz51v0v8FdpgeyN3zl-heYBfqJGv_3cz";
    
   it("should find a track with the given query", (done) => {
     query = VALID_QUERIES.random();
     searchTrack(token, query, (error, results) => {
       expect(error).to.be.undefined;
-    debugger
       expect(results).to.exist;
       expect(results).to.be.an("array");
       expect(results.length).to.be.greaterThan(0);
@@ -19,8 +18,6 @@ describe("search-track", () => {
         expect(result.name).to.be.a("string");
         expect(result.artistName).to.exist;
         expect(result.artistName).to.be.a("string");
-        /* expect(result.preview_url).to.exist;
-        expect(result.preview_url).to.be.a("string"); */
       });
       done();
     });
@@ -33,8 +30,7 @@ describe("search-track", () => {
       debugger;
       expect(results).to.be.undefined;
       expect(error).to.exist;
-      expect(error).to.be.an.instanceOf(Error)
-      
+      expect(error).to.be.an.instanceOf(Error)    
 
       done();
     });

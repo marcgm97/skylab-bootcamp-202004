@@ -1,23 +1,18 @@
-function TrackResults({results,token}){
-    debugger
-    console.log(results)
+function TrackResults({ results,token }) {
 
-    function handleToggleTrack(name,artistName,preview_url){
-        const flag = 'favoriteTracks'
-        const favorite = {name,artistName,preview_url}
-        toggleFavoriteMusic(flag,token,favorite, (error,results) => {
+    function handleToggleTrack(name, artistName, preview_url) {
+        const flag = 'favoriteTracks';
+        const favorite = { name, artistName, preview_url };
+        toggleFavoriteMusic(flag, token, favorite, (error, results) => {
             if(error) console.error(error);
-            
-        })
-
-    }
+        });
+    };
 
     return <>
         {results.length ? <ul>
             {
-            results.map(({artistName, name, preview_url}) => {
-               return <li> {`${artistName} : ${name}`} <a href= {`${preview_url}`}>Click me!</a><button onClick ={()=>handleToggleTrack(artistName,name,preview_url)}>I like</button> </li>
-                
+            results.map(({ artistName, name, preview_url }) => {
+               return <li> {`${artistName} : ${name}`} <a href= {`${preview_url}`}>Click me!</a><button onClick ={() => handleToggleTrack(artistName, name, preview_url)}>I like</button> </li>      
             })
         }
         </ul> : console.error("fail")}

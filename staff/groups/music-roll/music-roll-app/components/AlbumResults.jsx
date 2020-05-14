@@ -10,17 +10,17 @@ function AlbumResults({ results, token, spotyToken, onSessionExpired }) {
     
     function handleOnAlbum(id) {
         searchAlbumTracks(id, spotyToken, (error, resultsTracks) => {
-            if (error) console.log(error)
-            setAlbumTracks(resultsTracks)
-        })
+            if (error) console.log(error);
+            setAlbumTracks(resultsTracks);
+        });
     };
 
     function handleToggleAlbum(name, image) {
-        const favorite = {name,image}
-        const flag = 'favoriteAlbums'
-        toggleFavoriteMusic(flag,token,favorite, (error,results) => {
-            if(error.message === 'Invalid token') onSessionExpired()
-        })
+        const favorite = {name,image};
+        const flag = 'favoriteAlbums';
+        toggleFavoriteMusic(flag, token, favorite, (error, results) => {
+            if(error.message === 'Invalid token') onSessionExpired();
+        });
     };
 
     return <>
@@ -28,9 +28,7 @@ function AlbumResults({ results, token, spotyToken, onSessionExpired }) {
             {
                 results.map(({ name, id, artistsArray, image }) => {
                     return <li className="disc-list__item">
-                        <h2 className="disc-list__title">{`${name}`}</h2>    <h5 className="disc-list__artist">{`${artistsArray.join()}`} </h5><a href="" onClick={(event) => {
-
-                
+                        <h2 className="disc-list__title">{`${name}`}</h2> <h5 className="disc-list__artist">{`${artistsArray.join()}`} </h5> <a href="" onClick={(event) => {
                             event.preventDefault()
                             handleOnAlbum(id)
 

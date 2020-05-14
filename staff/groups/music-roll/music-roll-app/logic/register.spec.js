@@ -1,12 +1,12 @@
 describe('registerUser', () => {
-    let name, surname, email, password
+    let name, surname, email, password;
 
     beforeEach(() => {
-        name = names.random()
-        surname = surnames.random()
-        email = `${name.toLowerCase().split(' ').join('')}${surname.toLowerCase().split(' ').join('').concat('-').concat(Math.random())}@mail.com`
-        password = passwords.random()
-    })
+        name = names.random();
+        surname = surnames.random();
+        email = `${name.toLowerCase().split(' ').join('')}${surname.toLowerCase().split(' ').join('').concat('-').concat(Math.random())}@mail.com`;
+        password = passwords.random();
+    });
 
     it('should succeed on correct data', done => {
         registerUser(name, surname, email, password, error => {
@@ -16,33 +16,34 @@ describe('registerUser', () => {
                 `{ "username": "${email}", "password": "${password}" }`,
                 { 'Content-type': 'application/json' },
                 (error, status, body) => {
-                    expect(error).to.be.undefined
-                    expect(status).to.equal(200)
+                    expect(error).to.be.undefined;
+                    expect(status).to.equal(200);
 
-                    const { token } = JSON.parse(body)
+                    const { token } = JSON.parse(body);
 
-                    expect(token).to.exist
+                    expect(token).to.exist;
 
                     call('GET', 'https://skylabcoders.herokuapp.com/api/v2/users',
                         undefined,
                         { Authorization: `Bearer ${token}` },
                         (error, status, body) => {
-                            expect(error).to.be.undefined
-                            expect(status).to.equal(200)
+                            expect(error).to.be.undefined;
+                            expect(status).to.equal(200);
 
-                            const user = JSON.parse(body)
+                            const user = JSON.parse(body);
 
-                            expect(user.name).to.equal(name)
-                            expect(user.surname).to.equal(surname)
-                            expect(user.username).to.equal(email)
-                            expect(user.password).to.be.undefined
+                            expect(user.name).to.equal(name);
+                            expect(user.surname).to.equal(surname);
+                            expect(user.username).to.equal(email);
+                            expect(user.password).to.be.undefined;
 
-                            done()
+                            done();
                         }
-                    )
-                })
-        })
-    })
+                    );
+                }
+            );
+        });
+    });
 
     describe('when user already exists', () => {
         beforeEach(done => {
@@ -50,64 +51,48 @@ describe('registerUser', () => {
                 `{ "name": "${name}", "surname": "${surname}", "username": "${email}", "password": "${password}" }`,
                 { 'Content-type': 'application/json' },
                 (error, status, body) => {
-                    if (error) return done(new Error(error.message))
-                    if (status !== 201) return done(new Error(`unexpected status ${status}`))
+                    if (error) return done(new Error(error.message));
+                    if (status !== 201) return done(new Error(`unexpected status ${status}`));
 
                     done()
-                })
-        })
+                });
+        });
 
         it('should fail alerting user already exists', done => {
             registerUser(name, surname, email, password, error => {
-                expect(error).to.exist
+                expect(error).to.exist;
 
-                expect(error.message).to.equal(`user with username \"${email}\" already exists`)
+                expect(error.message).to.equal(`user with username \"${email}\" already exists`);
 
                 done()
-            })
-        })
-    
-    
+            });
+        });
     
         afterEach(done => {
             call('POST', 'https://skylabcoders.herokuapp.com/api/v2/users/auth',
                 `{ "username": "${email}", "password": "${password}" }`,
                 { 'Content-type': 'application/json' },
                 (error, status, body) => {
-                    if (error) return done(error)
-                    if (status !== 200) return done(new Error(`unexpected status ${status}`))
+                    if (error) return done(error);
+                    if (status !== 200) return done(new Error(`unexpected status ${status}`));
     
-                    const { token } = JSON.parse(body)
+                    const { token } = JSON.parse(body);
     
                     call('DELETE', 'https://skylabcoders.herokuapp.com/api/v2/users',
                         `{ "password": "${password}" }`,
-                        {
-                            'Content-type': 'application/json',
-                            Authorization: `Bearer ${token}`
-                        },
+                        { 'Content-type': 'application/json', Authorization: `Bearer ${token}` },
                         (error, status, body) => {
-                            if (error) return done(new Error(error.message))
-                            if (status !== 204) return done(new Error(`undexpected status ${status}`))
+                            if (error) return done(new Error(error.message));
+                            if (status !== 204) return done(new Error(`undexpected status ${status}`));
     
                             done()
-                        })
-                })
-        })
-    
-    
-    
-    
-    
-    
-    })
+                        });
+                });
+        });   
+    });
 
   
   
-
-
-
-
-   
 
 
   it('should fail on non-string field', () => {
