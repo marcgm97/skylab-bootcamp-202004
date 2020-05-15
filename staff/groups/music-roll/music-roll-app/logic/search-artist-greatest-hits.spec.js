@@ -2,7 +2,7 @@ describe("searchArtistgreatesthits", () => {debugger
     let id;
     const VALID_QUERIES = ["extremoduro", "platero y tu", "los suaves"];
     const queryUrl = encodeURI(VALID_QUERIES.random()).concat(`&type=artist&offset=0&limit=1`);
-    let token ="BQAgVv_DvbfAHMrsh0xl-EXS7-6Oo1l_OUkaEvonzucoRFtH2fxBLEmXH2NwIb-1SybFQqV_RUFK5H-7ZAPWnCb5GdbSXNbShcvAk0MlBKxJRFzvt9gLbm1LaSUe4wY4O1e6-AelvQ0MvnNFipRWPOmCQ1mwAIZ9QYCC-T1dNGJEFA4YDXxXJMMtOpVF";
+    let token ="BQCIVFpHk2RhRbf45HgUw5olpSXb2jE2IRyLXzylnpvSf4azaX7mnNsZ4nQ6btAQf8cPyTvKZ-2B98c0FHwknIktdE5oyF_P-tLWXQkswdXg_xnJFUoIg1x6hQ2134dVBSQ_E5pbzOmhZyDpYuyRBfdCd1BRqOinZpOEOC8_xcOeYgF31tM55S3uV-EL";
     beforeEach((done) => {
    debugger
     call(

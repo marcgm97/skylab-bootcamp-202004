@@ -55,7 +55,7 @@ function Browser({ token, spotyToken, onSessionExpired, handleMusicTool }){
                 if (error) setError('Somethings wrong')
             }
 
-
+        }
 
 
 
@@ -81,7 +81,7 @@ function Browser({ token, spotyToken, onSessionExpired, handleMusicTool }){
         }
 
 
-        })
+        
 
 
         if (browser === 'playlist') {

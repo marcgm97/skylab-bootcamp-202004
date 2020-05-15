@@ -2,7 +2,7 @@ describe("searchalbumtracks", () => {debugger
     let id;
     const VALID_QUERIES = ["chill", "beats", "californication"];
     const queryUrl = encodeURI(VALID_QUERIES.random()).concat(`&type=album&offset=0&limit=1`);
-    let token ="BQBsmtQYNTNv-tMjX89ejiSd1P9SNB-APzS3yb0sD2gNm6VnHFXaa1ysOqQQs36leApjVBSEUyDOnCIZxWOb_Igy65H936N50S3gBvW33sUC3L24Lomgs2tjIUrgXrUyXBZxvQdnUj1MdXUrJ7IC4NMsGz3TVrVIflPiW2-YdVxXhseMG_2VGQ5Gmo-c";
+    let token ="BQCIVFpHk2RhRbf45HgUw5olpSXb2jE2IRyLXzylnpvSf4azaX7mnNsZ4nQ6btAQf8cPyTvKZ-2B98c0FHwknIktdE5oyF_P-tLWXQkswdXg_xnJFUoIg1x6hQ2134dVBSQ_E5pbzOmhZyDpYuyRBfdCd1BRqOinZpOEOC8_xcOeYgF31tM55S3uV-EL";
     beforeEach((done) => {
    debugger
     call(

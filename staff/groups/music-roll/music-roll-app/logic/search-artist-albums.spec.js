@@ -5,7 +5,7 @@ describe("searchArtistalbums", () => {
   const queryUrl = encodeURI(VALID_QUERIES.random()).concat(
     `&type=artist&offset=0&limit=1`
   );
-  let token ="BQDj85_ESBdFATHHkRTgRiKenuuzbHzks13lwymWotcfH-2TMMr8N2pNTrdJsgR917YVxSki8Ui7i1HhA7CpaDNkq6bbxw8CoC83poIvWQQO9Zaxbx1X0mugCVgJ1BAEjQsIqLkzm8o2YlpUDPP_DcQGgwh-UcSwQEhKGMub30nIIrHsgaFp3pE6wgNh";
+  let token ="BQCIVFpHk2RhRbf45HgUw5olpSXb2jE2IRyLXzylnpvSf4azaX7mnNsZ4nQ6btAQf8cPyTvKZ-2B98c0FHwknIktdE5oyF_P-tLWXQkswdXg_xnJFUoIg1x6hQ2134dVBSQ_E5pbzOmhZyDpYuyRBfdCd1BRqOinZpOEOC8_xcOeYgF31tM55S3uV-EL";
   beforeEach((done) => {
     debugger;
     call(

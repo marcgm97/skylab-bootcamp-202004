@@ -2,7 +2,7 @@ describe("search-track", () => {
     let query, token
     const VALID_QUERIES = ['chill', 'beats', 'californication'];
     const INVALID_QUERIES = ['asdlkjflasf', 'aaaaasldkf0980', 'oaaaaa55555asdf']
-    token = "BQDcMbf7MuW3qQxUD1dMNueMlZXCAYsh37nyvv8of5gdnU_Z554KIaXUR2uKdJThMJv1VMe1k5QhsKbnEK9Vr6K5PVbimyYNQ9lEhpzWHhqJRyXVvfhHue5z4zHQwmte5J-R3yDRrUjsbthH372fIdefkI-2Rz51v0v8FdpgeyN3zl-heYBfqJGv_3cz"
+    token = "BQCIVFpHk2RhRbf45HgUw5olpSXb2jE2IRyLXzylnpvSf4azaX7mnNsZ4nQ6btAQf8cPyTvKZ-2B98c0FHwknIktdE5oyF_P-tLWXQkswdXg_xnJFUoIg1x6hQ2134dVBSQ_E5pbzOmhZyDpYuyRBfdCd1BRqOinZpOEOC8_xcOeYgF31tM55S3uV-EL"
    
   it("should find a track with the given query", (done) => {
     query = VALID_QUERIES.random();

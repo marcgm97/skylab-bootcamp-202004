@@ -1,32 +1,7 @@
 describe('search-playlist', () => {
     let query;
     let token;
-    // it('should find a playlists with the given query', done => {
-    //     let token = "BQClGZQz1FfLVlVTDKiO2oGxg2MjbEs_5BYy5b1afDBGRjGYlPk9BxVC3ajUOWlAz3NslwBgKlWTAzQSfHtanOLsCIkNHw_f8kaSGPEWe7agzL_uWWzlxdj9MmB34Eh0owH4NA"
-    //     let query = "chill beats"
-    //     searchPlaylists(token, query, (error, results) => {
-        
-    //         expect(error).to.be.undefined
-            
-    //         expect(results).to.exist
-    //         expect(results).to.be.an('array')
-    //         expect(results.length).to.be.greaterThan(0)
-            
-    //         results.forEach(result => {
-    //             expect(result).to.be.an('object')
-    //             expect(result.name).to.exist
-    //             expect(result.name).to.be.a('string')
-    //             expect(result.description).to.exist
-    //             expect(result.description).to.be.a('string')
-    //             expect(result.images).to.exist
-    //             expect(result.images).to.be.a('string')
-    //             expect(result.id).to.exist
-    //             expect(result.id).to.be.a('string')
-    //         })
-    //         done()    
-    //     })
-    // })
-
+  
     it('should throw an error when token its wrong', done => {
         
         query = "chill beats"
